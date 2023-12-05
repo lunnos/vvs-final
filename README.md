@@ -1,6 +1,5 @@
 Plano de Teste - Calculadora
 Testes Unitários (CalculatorServiceTest)
-
 1. Teste da Função de Soma (testSum)
 
     Descrição: Verificar se a função de soma da calculadora está calculando corretamente.
@@ -26,7 +25,6 @@ Testes Unitários (CalculatorServiceTest)
     Saída Esperada: "5" (como String, devido ao tipo de retorno)
 
 Testes de Integração (CalculatorApiTest)
-
 1. Teste do Endpoint de Soma (testSumEndpoint)
 
     Descrição: Verificar se o endpoint de soma da API retorna o resultado esperado.
