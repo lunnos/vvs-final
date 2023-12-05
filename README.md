@@ -1,5 +1,16 @@
 # Plano de Teste - Calculadora
 
+# Relatório de Análise Estática - PMD
+
+A análise identificou violações relacionadas à documentação de classes e métodos no código.
+
+## Exemplo de Violação.
+
+   - **Método `sum` em CalculatorClient**
+   - **Linha:** 15
+   - **Regra Violada:** CommentRequired
+   - **Descrição:** Comentários são obrigatórios para métodos públicos e construtores.
+
 ## Testes Unitários (CalculatorServiceTest)
 
 ### 1. Teste da Função de Soma (testSum)
