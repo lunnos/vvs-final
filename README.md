@@ -1,22 +1,59 @@
-1. Plano de Teste (formato Markdown):
+Plano de Teste - API Calculadora
 
-Cenário de Teste 1: Soma de Números Positivos
+Este documento descreve o plano de teste para a API Calculadora, abrangendo os testes unitários e de API.
 
-    Entrada: Números positivos a = 5, b = 7
-    Saída Esperada: 12
+Versão: 1.0
 
-Cenário de Teste 2: Subtração de Números Negativos
+Última atualização: 04 de dezembro de 2023
 
-    Entrada: Números negativos a = -10, b = -5
-    Saída Esperada: -5
-
-Cenário de Teste 3: Multiplicação de Números Mistos
-
-    Entrada: Números mistos a = 3, b = -4
-    Saída Esperada: -12
-
-Cenário de Teste 4: Divisão por Zero
-
-    Entrada: Números a = 8, b = 0
-    Saída Esperada: Mensagem de erro "Cannot divide by zero"
-
+Objetivo: Validar a funcionalidade da API Calculadora, garantindo que ela realiza as operações de soma, subtração, multiplicação e divisão corretamente.
+Testes Unitários
+Soma
+Entrada	Saída esperada
+2, 3	5
+-5, 10	5
+0, 0	0
+-12, -4	-16
+Subtração
+Entrada	Saída esperada
+5, 3	2
+10, -2	12
+0, 0	0
+-8, 4	-12
+Multiplicação
+Entrada	Saída esperada
+2, 3	6
+5, 0	0
+-2, -4	8
+10, 10	100
+Divisão
+Entrada	Saída esperada
+10, 2	5
+12, 3	4
+-9, -3	3
+0, 10	0 (divisão por zero deve retornar uma exceção)
+Testes de API
+Soma
+URL	Código de status	Corpo da resposta
+http://localhost:8080/calculator/sum/2/3	200	5
+http://localhost:8080/calculator/sum/-5/10	200	5
+http://localhost:8080/calculator/sum/0/0	200	0
+http://localhost:8080/calculator/sum/-12/-4	200	-16
+Subtração
+URL	Código de status	Corpo da resposta
+http://localhost:8080/calculator/subtract/5/3	200	2
+http://localhost:8080/calculator/subtract/10/-2	200	12
+http://localhost:8080/calculator/subtract/0/0	200	0
+http://localhost:8080/calculator/subtract/-8/4	200	-12
+Multiplicação
+URL	Código de status	Corpo da resposta
+http://localhost:8080/calculator/multiply/2/3	200	6
+http://localhost:8080/calculator/multiply/5/0	200	0
+http://localhost:8080/calculator/multiply/-2/-4	200	8
+http://localhost:8080/calculator/multiply/10/10	200	100
+Divisão
+URL	Código de status	Corpo da resposta
+http://localhost:8080/calculator/divide/10/2	200	5
+http://localhost:8080/calculator/divide/12/3	200	4
+http://localhost:8080/calculator/divide/-9/-3	200	3
+http://localhost:8080/calculator/divide/0/10	400	"Divisão por zero!"
