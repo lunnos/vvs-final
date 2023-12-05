@@ -1,15 +1,22 @@
-# pw2-final
+1. Plano de Teste (formato Markdown):
 
-Trabalho final da disciplina de Programação para Web II do curso de Sistemas para Internet no IFRS.
+Cenário de Teste 1: Soma de Números Positivos
 
-Para rodar o projeto, além de executar o comando quarkus dev, é necessário executar o comando npm start dentro da pasta frontend.
+    Entrada: Números positivos a = 5, b = 7
+    Saída Esperada: 12
 
-o front roda na porta 3000 e o back na porta 8080.
+Cenário de Teste 2: Subtração de Números Negativos
 
-Esse projeto utiliza:
+    Entrada: Números negativos a = -10, b = -5
+    Saída Esperada: -5
 
-- java/quarkus
-- restful web services
-- react
-- bootstrap
+Cenário de Teste 3: Multiplicação de Números Mistos
+
+    Entrada: Números mistos a = 3, b = -4
+    Saída Esperada: -12
+
+Cenário de Teste 4: Divisão por Zero
+
+    Entrada: Números a = 8, b = 0
+    Saída Esperada: Mensagem de erro "Cannot divide by zero"
 
