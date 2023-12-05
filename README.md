@@ -1,59 +1,50 @@
-Plano de Teste - API Calculadora
+Plano de Teste - Calculadora
+Testes Unitários (CalculatorServiceTest)
+1. Teste da Função de Soma (testSum)
 
-Este documento descreve o plano de teste para a API Calculadora, abrangendo os testes unitários e de API.
+    Descrição: Verificar se a função de soma da calculadora está calculando corretamente.
+    Entrada: 2, 3
+    Saída Esperada: 5
 
-Versão: 1.0
+2. Teste da Função de Subtração (testSubtract)
 
-Última atualização: 04 de dezembro de 2023
+    Descrição: Verificar se a função de subtração da calculadora está calculando corretamente.
+    Entrada: 5, 3
+    Saída Esperada: 2
 
-Objetivo: Validar a funcionalidade da API Calculadora, garantindo que ela realiza as operações de soma, subtração, multiplicação e divisão corretamente.
-Testes Unitários
-Soma
-Entrada	Saída esperada
-2, 3	5
--5, 10	5
-0, 0	0
--12, -4	-16
-Subtração
-Entrada	Saída esperada
-5, 3	2
-10, -2	12
-0, 0	0
--8, 4	-12
-Multiplicação
-Entrada	Saída esperada
-2, 3	6
-5, 0	0
--2, -4	8
-10, 10	100
-Divisão
-Entrada	Saída esperada
-10, 2	5
-12, 3	4
--9, -3	3
-0, 10	0 (divisão por zero deve retornar uma exceção)
-Testes de API
-Soma
-URL	Código de status	Corpo da resposta
-http://localhost:8080/calculator/sum/2/3	200	5
-http://localhost:8080/calculator/sum/-5/10	200	5
-http://localhost:8080/calculator/sum/0/0	200	0
-http://localhost:8080/calculator/sum/-12/-4	200	-16
-Subtração
-URL	Código de status	Corpo da resposta
-http://localhost:8080/calculator/subtract/5/3	200	2
-http://localhost:8080/calculator/subtract/10/-2	200	12
-http://localhost:8080/calculator/subtract/0/0	200	0
-http://localhost:8080/calculator/subtract/-8/4	200	-12
-Multiplicação
-URL	Código de status	Corpo da resposta
-http://localhost:8080/calculator/multiply/2/3	200	6
-http://localhost:8080/calculator/multiply/5/0	200	0
-http://localhost:8080/calculator/multiply/-2/-4	200	8
-http://localhost:8080/calculator/multiply/10/10	200	100
-Divisão
-URL	Código de status	Corpo da resposta
-http://localhost:8080/calculator/divide/10/2	200	5
-http://localhost:8080/calculator/divide/12/3	200	4
-http://localhost:8080/calculator/divide/-9/-3	200	3
-http://localhost:8080/calculator/divide/0/10	400	"Divisão por zero!"
+3. Teste da Função de Multiplicação (testMultiply)
+
+    Descrição: Verificar se a função de multiplicação da calculadora está calculando corretamente.
+    Entrada: 2, 3
+    Saída Esperada: 6
+
+4. Teste da Função de Divisão (testDivide)
+
+    Descrição: Verificar se a função de divisão da calculadora está calculando corretamente.
+    Entrada: 10, 2
+    Saída Esperada: "5" (como String, devido ao tipo de retorno)
+
+Testes de Integração (CalculatorApiTest)
+1. Teste do Endpoint de Soma (testSumEndpoint)
+
+    Descrição: Verificar se o endpoint de soma da API retorna o resultado esperado.
+    Chamada API: GET /sum/2/3
+    Saída Esperada: Corpo da resposta igual a "5" e código de status 200.
+
+2. Teste do Endpoint de Subtração (testSubtractEndpoint)
+
+    Descrição: Verificar se o endpoint de subtração da API retorna o resultado esperado.
+    Chamada API: GET /subtract/5/2
+    Saída Esperada: Corpo da resposta igual a "3" e código de status 200.
+
+3. Teste do Endpoint de Multiplicação (testMultiplyEndpoint)
+
+    Descrição: Verificar se o endpoint de multiplicação da API retorna o resultado esperado.
+    Chamada API: GET /multiply/4/3
+    Saída Esperada: Corpo da resposta igual a "12" e código de status 200.
+
+4. Teste do Endpoint de Divisão (testDivideEndpoint)
+
+    Descrição: Verificar se o endpoint de divisão da API retorna o resultado esperado.
+    Chamada API: GET /divide/10/2
+    Saída Esperada: Corpo da resposta igual a "5" e código de status 200.
