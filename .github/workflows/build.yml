@@ -1,26 +1,26 @@
-name: Build and Test
+name: Construir e Testar
 
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Clonar Repositório
         uses: actions/checkout@v2
 
-      - name: Set up JDK 11
+      - name: Configurar JDK 11
         uses: actions/setup-java@v2
         with:
           distribution: 'adopt'
           java-version: '11'
 
-      - name: Build with Maven
+      - name: Construir com Maven
         run: mvn -B clean install
 
-      - name: Run Tests
+      - name: Executar Testes
         run: mvn test
